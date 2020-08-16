@@ -1,15 +1,17 @@
-import React from 'react'
+import React from "react";
 //screens
-import Cards from './screens/Cards'
+import Cards from "./screens/Cards";
+import CCards from "./screens/Main";
 //css
-import './App.css'
+import "./App.css";
 
 function App() {
   return (
-    <div className='App'>
+    <div className="App">
       <Cards />
+      <CCards />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
