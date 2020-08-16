@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Card, CardImg, CardText, CardBody, CardTitle } from "reactstrap";
+import "bootstrap/dist/css/bootstrap.css";
+import {
+  Card,
+  CardImg,
+  CardText,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+} from "reactstrap";
 
 function CCards() {
   const [cards, setCards] = useState([]);
@@ -27,16 +35,16 @@ function CCards() {
 
   const UICards = cards.map(({ title, subtitle, author, img }, index) => (
     <div key={index}>
-      <Card>
-        <CardImg top src={img} alt="Card image cap" />
-        <CardBody>
-          <CardTitle>{title}</CardTitle>
-          <CardText>{author} </CardText>
-          <CardText>
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </CardText>
-        </CardBody>
-      </Card>
+      <div>
+        <Card>
+          <CardImg src={img} alt="Card image cap" />
+          <CardBody>
+            <CardTitle>{title}</CardTitle>
+            <CardSubtitle>{subtitle}</CardSubtitle>
+            <CardText>{author}</CardText>
+          </CardBody>
+        </Card>
+      </div>
     </div>
   ));
   return <>{UICards}</>;
