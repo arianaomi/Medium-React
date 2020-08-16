@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Card, CardImg, CardText, CardBody, CardTitle } from "reactstrap";
+import "./centralCards.css";
 
 function CCards() {
   const [cards, setCards] = useState([]);
@@ -26,9 +27,9 @@ function CCards() {
   });
 
   const UICards = cards.map(({ title, subtitle, author, img }, index) => (
-    <div key={index}>
-      <Card>
-        <CardImg top src={img} alt="Card image cap" />
+    <div className="container" key={index}>
+      <Card className="card-container">
+        <CardImg clasName="img-central" top src={img} alt="Card image cap" />
         <CardBody>
           <CardTitle>{title}</CardTitle>
           <CardText>{author} </CardText>
