@@ -1,12 +1,11 @@
 import React from "react";
-import NavBarSticky from "../src/components/NavBar";
+import NavbarSticky from "../src/components/NavBar";
 
 import "./App.css";
-
 function App() {
   return (
     <div className="App">
-      <NavBarSticky />
+      <NavbarSticky />
       <header className="App-header"></header>
     </div>
   );
