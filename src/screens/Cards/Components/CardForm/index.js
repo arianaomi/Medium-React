@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 //Components
 import Input from '../../../../components/Input'
 //CSS
+import './CardForm.css'
 
 function CardForm({ callback }) {
   const [title, setTitle] = useState('')
@@ -45,7 +46,7 @@ function CardForm({ callback }) {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className='cardForm' onSubmit={handleSubmit}>
         <label>Title</label>
         <Input value={title} name='title' callback={handleInputChange} />
         <label>Subtitle</label>
