@@ -1,5 +1,6 @@
 import React from "react";
 import NavBarSticky from "../src/components/NavBar";
+
 import "./App.css";
 
 function App() {
