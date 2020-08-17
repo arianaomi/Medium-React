@@ -85,12 +85,14 @@ h5 {
     padding-right: 10px;
   }
   .subtitle {
-    margin-top: 2px;
+    font-size: 0.9rem;
+    margin-top: 7px;
     display: block;
-    height: 40px;
+    height: 35px;
     overflow: hidden;
     text-overflow: ellipsis;
     padding-right: 15px;
+    color: rgba(0, 0, 0, 0.54);
   }
   .contentCard {
     width: 75%;

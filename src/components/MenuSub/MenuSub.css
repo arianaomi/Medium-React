@@ -32,7 +32,6 @@ svg {
   height: 32px;
   line-height: 32px;
   padding: 0 14px;
-  display: inline-block;
   vertical-align: middle;
   font-size: 15px;
   color: rgba(0, 0, 0, 0.84);
@@ -42,6 +41,7 @@ svg {
   border-radius: 50%;
   object-fit: fill;
 }
+
 @media only screen and (min-width: 1024px) {
   .disappear-desk {
     display: none;

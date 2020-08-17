@@ -1,14 +1,13 @@
 import React from 'react'
 import Logo from '../../Medium_Black.png'
 import MiniLogo from '../../Monogram.png'
-import userimg from '../../user.JPG'
 import './MenuSub.css'
 
 function MenuSub() {
   return (
     <nav className='logoeiconos'>
       <div className='logos'>
-        <a href='index.html'>
+        <a href='#'>
           <img className='disappear-mobile' src={Logo} height='22' alt='logo' />
           <img
             className='disappear-desk'
@@ -40,7 +39,7 @@ function MenuSub() {
         </svg>
 
         <svg
-          class='bi bi-bookmarks d-none d-md-flex'
+          className='disappear-mobile'
           width='1em'
           height='1em'
           viewBox='0 0 16 16'
@@ -55,7 +54,7 @@ function MenuSub() {
         </svg>
 
         <svg
-          class='bi bi-bell'
+          className='disappear-mobile'
           width='1em'
           height='1em'
           viewBox='0 0 16 16'
@@ -85,12 +84,12 @@ function MenuSub() {
           </svg>
         </a>
 
-        <button type='button' class='btn'>
+        <button type='button' class='btn disappear-mobile'>
           New post
         </button>
 
         <img
-          class='user-img'
+          class='user-img '
           src='https://www.contrareplica.mx/uploads/galerias/normal/d51adde6198cd2e5a32ddda82d2ee9b6.jpg'
           width='35'
           height='35'

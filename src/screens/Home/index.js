@@ -48,11 +48,6 @@ function Home() {
   return (
     <Container className='hi'>
       <Row>
-        <Col>
-          <MenuSub />
-        </Col>
-      </Row>
-      <Row>
         <Col xs='12' md='5'>
           {UICardGeneral}
         </Col>
