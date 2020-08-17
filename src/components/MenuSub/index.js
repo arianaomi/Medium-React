@@ -21,7 +21,6 @@ function MenuSub() {
 
       <div className='iconos'>
         <svg
-          class='bi bi-search'
           width='1em'
           height='1em'
           viewBox='0 0 16 16'
@@ -72,7 +71,6 @@ function MenuSub() {
             width='1em'
             height='1em'
             viewBox='0 0 16 16'
-            class='bi bi-pencil-square'
             fill='currentColor'
             xmlns='http://www.w3.org/2000/svg'
           >
@@ -84,12 +82,12 @@ function MenuSub() {
           </svg>
         </a>
 
-        <button type='button' class='btn disappear-mobile'>
+        <button type='button' classNames='btn disappear-mobile'>
           New post
         </button>
 
         <img
-          class='user-img '
+          className='user-img '
           src='https://www.contrareplica.mx/uploads/galerias/normal/d51adde6198cd2e5a32ddda82d2ee9b6.jpg'
           width='35'
           height='35'

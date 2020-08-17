@@ -13,7 +13,6 @@ function CardGeneral({
   popular,
   img,
 }) {
-  console.log(title, subtitle, author, hour, content, popular, img)
   return (
     <>
       <div className='Card'>
