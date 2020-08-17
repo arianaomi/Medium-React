@@ -3,6 +3,7 @@ import CardGeneral from '../../components/CardGeneral'
 import { Container, Row, Col } from 'reactstrap'
 import MenuSub from '../../components/MenuSub'
 import './Home.css'
+import NavbarSticky from '../../components/NavBar'
 
 function Home() {
   const [cardsHome, setCardsHome] = useState([])
@@ -47,6 +48,11 @@ function Home() {
 
   return (
     <Container className='hi'>
+      <Row>
+        <Col>
+          <NavbarSticky />
+        </Col>
+      </Row>
       <Row>
         <Col xs='12' md='5'>
           {UICardGeneral}

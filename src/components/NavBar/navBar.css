@@ -1,0 +1,22 @@
+.NavBarSticky {
+  width: 80vw;
+  height: 100%;
+  font-size: 14px;
+  margin: 10px 0px;
+  list-style: none;
+  padding: 10px;
+  display: inline-block;
+}
+
+.liItem {
+  width: 100px;
+  margin: 0px;
+  padding: 0px;
+}
+.liItem a {
+  color: #6c757d;
+  text-decoration-line: none;
+  padding: 0%;
+  display: flex;
+  justify-content: center;
+}
