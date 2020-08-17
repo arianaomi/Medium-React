@@ -60,13 +60,6 @@ function CardGeneral({
           <img className='imgCard' src={img} />
         </div>
       </div>
-      {/* <Card className='cardBoot'>
-        <Card.Body>
-          <Card.Title>{title}</Card.Title>
-          <Card.Text>lorem </Card.Text>
-        </Card.Body>
-        <Card.Img variant='right' src={img} />
-      </Card> */}
     </>
   )
 }

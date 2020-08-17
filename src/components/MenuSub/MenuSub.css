@@ -1,0 +1,32 @@
+.logoeiconos {
+  display: flex;
+  justify-content: space-between;
+}
+.disappear-mobile {
+  display: none;
+}
+.disappear-desk {
+  display: inline;
+}
+
+/* .logos {
+  width: 30%;
+} 
+.iconos {
+  display: flex;
+
+  justify-content: space-between;
+}
+*/
+
+svg {
+  margin-left: 10%;
+}
+@media only screen and (min-width: 1024px) {
+  .disappear-desk {
+    display: none;
+  }
+  .disappear-mobile {
+    display: inline;
+  }
+}

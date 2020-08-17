@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import CardGeneral from '../../components/CardGeneral'
 import { Container, Row, Col } from 'reactstrap'
-
+import MenuSub from '../../components/MenuSub'
 import './Home.css'
 
 function Home() {
@@ -47,6 +47,11 @@ function Home() {
 
   return (
     <Container className='hi'>
+      <Row>
+        <Col>
+          <MenuSub />
+        </Col>
+      </Row>
       <Row>
         <Col xs='12' md='5'>
           {UICardGeneral}
