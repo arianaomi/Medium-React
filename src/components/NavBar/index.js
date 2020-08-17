@@ -1,13 +1,12 @@
-/*
 import React, { Component } from "react";
+import { Nav, NavItem, NavLink } from "reactstrap";
 import ScrollMenu from "react-horizontal-scrolling-menu";
-//import { NavLink, whithRouther } from "react-router-dom";
-//import { Navbar } from "react-bootstrap";
 import "./navBar.css";
+
 const list = [
   { name: "HOME" },
   { name: "POPULAR" },
-  { name: "MOMENTUM" },
+  { name: "MEMENTUM" },
   { name: "CORONAVIRUS" },
   { name: "ONEZERO" },
   { name: "ELEMENTAL" },
@@ -22,114 +21,54 @@ const list = [
 ];
 
 const MenuItem = ({ text, selected }) => {
-  return <div className="menu-item">{text}</div>;
+  return (
+    <NavItem className="liItem">
+      <NavLink href="#">{text}</NavLink>
+    </NavItem>
+  );
 };
-export const Menu = (list) =>
+
+export const Menu = (list, selected) =>
   list.map((el) => {
     const { name } = el;
-    return <MenuItem text={name} key={name} />;
+    return <MenuItem text={name} key={name} selected={selected} />;
   });
 
 const Arrow = ({ text, className }) => {
-  return <div className="{className}">{text}</div>;
+  return <div className={className}> {text}</div>;
 };
 
 const ArrowLeft = Arrow({ text: "<", className: "arrow-prev" });
-const ArrowRigth = Arrow({ text: ">", className: "arrow-next" });
+const ArrowRight = Arrow({ text: ">", className: "arrow-right" });
+const selected = "HOME";
 
-class NavBar extends Component {
-  state = {
-    selected: 0,
-  };
+class NavbarSticky extends Component {
+  constructor(props) {
+    super(props);
+    this.menuItems = Menu(list, selected);
+    this.state = {
+      selected,
+    };
+    this.onSelect = this.onSelect.bind(this);
+  }
+
   onSelect = (key) => {
     this.setState({ selected: key });
   };
+
   render() {
     const { selected } = this.state;
-    //crear menu para items
-    const menu = Menu(list, selected);
+    const menu = this.menuItems;
 
     return (
-      <div className="NavBar">
+      <div className="NavBarSticky">
         <ScrollMenu
           data={menu}
           arrowLeft={ArrowLeft}
-          arrowRigth={ArrowRigth}
+          arrowRight={ArrowRight}
           selected={selected}
           onSelect={this.onSelect}
         />
-      </div>
-    );
-  }
-}
-
-export default NavBar;
-*/
-
-import React, { Component } from "react";
-//import { NavLink, whithRouther } from "react-router-dom";
-import { Navbar } from "react-bootstrap";
-import "./navBar.css";
-
-const Arrow = ({ text, className }) => {
-  return <div className="{className}">{text}</div>;
-};
-
-class NavbarSticky extends Component {
-  getNavLinkClass = (path) => {
-    return this.props.location.pathname === path ? "active" : "";
-  };
-  render() {
-    return (
-      <div className="navBar">
-        <Navbar expand="lg" variant="light" bg="light">
-          <Navbar.Brand href="#">
-            <ul className="list-scroll">
-              <li>
-                <a href="# ">HOME</a>
-              </li>
-              <li>
-                <a href="#">POPULAR</a>
-              </li>
-              <li>
-                <a href="# ">MOMENTUM</a>
-              </li>
-              <li>
-                <a href="#">CORONAVIRUS</a>
-              </li>
-              <li>
-                <a href="# ">ONEZERO</a>
-              </li>
-              <li>
-                <a href="#">ELEMENTAL</a>
-              </li>
-              <li>
-                <a href="# ">GEN</a>
-              </li>
-              <li>
-                <a href="#">ZORA</a>
-              </li>
-              <li>
-                <a href="# ">FORGE</a>
-              </li>
-              <li>
-                <a href="#">HUMAN PARTS</a>
-              </li>
-              <li>
-                <a href="# ">MARKER</a>
-              </li>
-              <li>
-                <a href="#">LEVEL</a>
-              </li>
-              <li>
-                <a href="#">HEATED</a>
-              </li>
-              <li>
-                <a href="#">MORE</a>
-              </li>
-            </ul>
-          </Navbar.Brand>
-        </Navbar>
       </div>
     );
   }

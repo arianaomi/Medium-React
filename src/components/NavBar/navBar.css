@@ -1,20 +1,17 @@
-.list-scroll {
-  font-size: small;
-  margin: 5px;
+.NavBarSticky {
+  width: 90vw;
+  font-size: 14px;
+  margin: 0px;
   list-style: none;
-  white-space: nowrap;
-  color: #6c757d;
-}
-
-.list-scroll li {
-  margin-right: 25px;
+  padding: 0px;
   display: inline-block;
 }
 
-.list-scroll li a {
-  color: #6c757d;
+.liItem {
+  width: 150px;
+  margin: 0px;
+  padding: 0px;
 }
-
-.list-scroll li a:hover {
-  color: black;
+.liItem a {
+  color: #6c757d;
 }
