@@ -22,7 +22,7 @@ const list = [
 
 const MenuItem = ({ text, selected }) => {
   return (
-    <NavItem className="liItem">
+    <NavItem className="MenuItem">
       <NavLink href="#">{text}</NavLink>
     </NavItem>
   );
