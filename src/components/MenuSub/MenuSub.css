@@ -1,6 +1,8 @@
 .logoeiconos {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  height: 65px;
 }
 .disappear-mobile {
   display: none;
@@ -9,18 +11,36 @@
   display: inline;
 }
 
-/* .logos {
-  width: 30%;
-} 
 .iconos {
   display: flex;
 
   justify-content: space-between;
+  align-items: center;
 }
-*/
 
 svg {
-  margin-left: 10%;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+.btn {
+  color: rgb(46, 45, 45);
+  margin: 0px 10px;
+  background-color: rgba(245, 245, 245, 0);
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 14px;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.84);
+  border-color: rgba(0, 0, 0, 0.54);
+}
+.user-img {
+  border-radius: 50%;
+  object-fit: fill;
 }
 @media only screen and (min-width: 1024px) {
   .disappear-desk {
