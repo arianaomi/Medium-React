@@ -1,0 +1,9 @@
+.Card {
+  display: flex;
+  height: 126px;
+  width: 60%;
+}
+
+.imgCard {
+  width: 150px;
+}
