@@ -6,7 +6,6 @@ import './App.css'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import Home from './screens/Home'
 import MenuSub from './components/MenuSub'
-import NavbarSticky from '../src/components/NavBar'
 
 import './App.css'
 function App() {

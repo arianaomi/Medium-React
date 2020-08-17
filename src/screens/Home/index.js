@@ -4,6 +4,7 @@ import { Container, Row, Col } from 'reactstrap'
 import MenuSub from '../../components/MenuSub'
 import './Home.css'
 import NavbarSticky from '../../components/NavBar'
+import ComponenteCentral from '../../components/ComponenteCentral'
 
 function Home() {
   const [cardsHome, setCardsHome] = useState([])
@@ -39,18 +40,17 @@ function Home() {
       />
     )
   )
-  console.log(UICardGeneral)
-  // let UICardGeneral = cardsHome.map(
-  //   ({ title, subtitle, author, hour, content, popular, img }, index) => (
-  //     <CardGeneral key={index} title={title} subtitle={subtitle} title={img} />
-  //   )
-  // )
 
   return (
     <Container className='hi'>
       <Row>
         <Col>
           <NavbarSticky />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <ComponenteCentral />
         </Col>
       </Row>
       <Row>
