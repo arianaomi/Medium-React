@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import CardGeneral from '../../components/CardGeneral'
+import { Container, Row, Col } from 'reactstrap'
+
+import './Home.css'
 
 function Home() {
   const [cardsHome, setCardsHome] = useState([])
@@ -42,7 +45,15 @@ function Home() {
   //   )
   // )
 
-  return <h1>{UICardGeneral}</h1>
+  return (
+    <Container className='hi'>
+      <Row>
+        <Col xs='12' md='5'>
+          {UICardGeneral}
+        </Col>
+      </Row>
+    </Container>
+  )
 }
 
 export default Home

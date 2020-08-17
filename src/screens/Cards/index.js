@@ -59,8 +59,6 @@ function Cards() {
   )
   return (
     <>
-      {UICards.length ? null : <p>No hay cards</p>}
-      <ul>{UICards}</ul>
       <CardForm callback={handleForm} />
     </>
   )
