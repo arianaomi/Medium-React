@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Card, CardImg, CardText, CardBody, CardTitle } from "reactstrap";
 import "./centralCards.css";
 
 function CCards() {
@@ -11,33 +10,39 @@ function CCards() {
       .then((data) => {
         console.log(data);
         let parsedCards = [];
+        let counter = 1;
         for (let key in data) {
           console.log(key);
           console.log(data);
           let card = data[key];
           console.log("card", card);
           card["key"] = key;
-          parsedCards.push(card);
+          if (counter <= 3) {
+            parsedCards.push(card);
+            counter++;
+          } else {
+            console.log("Ya son 3");
+          }
         }
         console.log("parsed", parsedCards);
         if (parsedCards) {
           setCards(parsedCards);
         }
       });
-  });
+  }, []);
 
-  const UICards = cards.map(({ title, subtitle, author, img }, index) => (
-    <div className="container" key={index}>
-      <Card className="card-container">
-        <CardImg className="img-central" top src={img} alt="Card image cap" />
-        <CardBody>
-          <CardTitle>{title}</CardTitle>
-          <CardText>{author} </CardText>
-          <CardText>
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </CardText>
-        </CardBody>
-      </Card>
+  const UICards = cards.map(({ title, subtitle, author, img, hour }, index) => (
+    <div key={index}>
+      <div className="card-container">
+        <img className="cardImg" src={img} alt="Card image cap" />
+        <div className="left">
+          <h3 className="title__item">{title}</h3>
+          <span className="">{author} </span>
+          <p className="ellipsis">
+            <span className="description">Aug 17,2020 7 min · read ★</span>
+          </p>
+        </div>
+      </div>
     </div>
   ));
   return <>{UICards}</>;

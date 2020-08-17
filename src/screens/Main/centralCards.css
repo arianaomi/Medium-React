@@ -1,4 +1,38 @@
 .card-container {
   display: flex;
-  flex-flow: row;
+  margin: 1rem;
+  margin-left: 2rem;
+}
+
+.cardImg {
+  margin-right: 1rem !important;
+  position: relative;
+  right: 20px;
+  margin-top: 0;
+}
+
+.description {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 1rem;
+  overflow: hidden !important;
+  max-height: 40px !important;
+  text-overflow: ellipsis !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical;
+}
+
+.title__item {
+  color: rgba(0, 0, 0, 0.84);
+  margin-top: 0px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  overflow: hidden !important;
+  max-height: 84px !important;
+  text-overflow: ellipsis !important;
+  margin-bottom: 2.5em;
+}
+
+.left {
+  text-align: left;
 }
