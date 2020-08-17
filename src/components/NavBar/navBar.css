@@ -1,4 +1,6 @@
 .NavBarSticky {
+  position: -webkit-sticky;
+  position: sticky;
   width: 90vw;
   height: 100%;
   font-size: 14px;
@@ -6,6 +8,8 @@
   list-style: none;
   padding: 10px;
   display: inline-block;
+  z-index: 1;
+  top: 0;
 }
 
 .liItem {
