@@ -1,9 +1,10 @@
 .NavBarSticky {
   width: 90vw;
+  height: 100%;
   font-size: 14px;
   margin: 0px;
   list-style: none;
-  padding: 0px;
+  padding: 10px;
   display: inline-block;
 }
 
@@ -14,4 +15,8 @@
 }
 .liItem a {
   color: #6c757d;
+  text-decoration-line: none;
+  padding: 0%;
+  display: flex;
+  justify-content: center;
 }
