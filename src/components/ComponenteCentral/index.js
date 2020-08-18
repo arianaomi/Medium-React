@@ -34,7 +34,7 @@ function CCards() {
   const UICards = cards.map(({ title, subtitle, author, img, hour }, index) => (
     <div key={index}>
       <div className="card-container">
-        <img className="cardImg" src={img} alt="Card image cap" />
+        <img className="imgCard" src={img} alt="Card image cap" />
         <div className="left">
           <h3 className="title__item">{title}</h3>
           <span className="">{author} </span>

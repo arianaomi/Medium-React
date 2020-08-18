@@ -6,6 +6,7 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./screens/Home";
 import MenuSub from "./components/MenuSub";
+import Post from "./screens/Post";
 
 import "./App.css";
 
@@ -17,6 +18,9 @@ function App() {
         <Switch>
           <Route path="/" exact={true}>
             <Home />
+          </Route>
+          <Route path="/Post" exact={true}>
+            <Post />
           </Route>
         </Switch>
       </div>

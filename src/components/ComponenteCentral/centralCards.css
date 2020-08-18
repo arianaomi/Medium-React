@@ -1,7 +1,10 @@
 .card-container {
   display: flex;
   margin: 1rem;
-  margin-left: 2rem;
+  margin-left: 1rem;
+  margin-bottom: 24px;
+  width: 60%;
+  position: relative;
 }
 
 .cardImg {
@@ -23,16 +26,26 @@
 }
 
 .title__item {
-  color: rgba(0, 0, 0, 0.84);
   margin-top: 0px;
-  font-size: 1.125rem;
-  font-weight: 600;
   overflow: hidden !important;
   max-height: 84px !important;
   text-overflow: ellipsis !important;
   margin-bottom: 2.5em;
+  font-size: 1.3rem;
+  max-height: 50px;
+  padding: 0px;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .left {
   text-align: left;
+}
+
+.imgCard {
+  display: block;
+  line-height: 20px;
+  height: 100%;
+  width: 152px;
+  margin-right: 2rem;
 }
