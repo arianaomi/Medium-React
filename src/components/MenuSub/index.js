@@ -4,11 +4,16 @@ import MiniLogo from '../../Monogram.png'
 //CSS
 import './MenuSub.css'
 //RRD
-import { Link } from 'react-router-dom'
+import { Link, useRouteMatch } from 'react-router-dom'
 
 function MenuSub() {
+  const { url } = useRouteMatch()
+
+  let UIName = url === '/popular' ? '  Popular on Medium' : null
+  let popular = url != '/' ? 'popularPag' : null
+
   return (
-    <nav className='logoeiconos'>
+    <nav className={`logoeiconos ${popular}`}>
       <div className='logos'>
         <Link to='/'>
           <img className='disappear-mobile' src={Logo} height='22' alt='logo' />
@@ -20,6 +25,7 @@ function MenuSub() {
             alt='logo'
           />
         </Link>
+        <span>{UIName}</span>
       </div>
 
       <div className='iconos'>

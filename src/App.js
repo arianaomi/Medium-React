@@ -5,8 +5,7 @@ import Home from './screens/Home'
 import PostById from './screens/PostById'
 import PostPopular from './screens/PostPopular'
 import Form from './screens/Form'
-//Components
-import MenuSub from './components/MenuSub'
+
 //css
 import './App.css'
 
@@ -14,7 +13,6 @@ function App() {
   return (
     <Router>
       <div className='App'>
-        <MenuSub />
         <Switch>
           <Route path='/' exact>
             <Home />
@@ -22,6 +20,7 @@ function App() {
           <Route path='/popular' exact>
             <PostPopular />
           </Route>
+
           <Route path='/form' exact>
             <Form />
           </Route>

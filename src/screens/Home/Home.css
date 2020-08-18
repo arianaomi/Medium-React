@@ -26,7 +26,48 @@ p.see {
 }
 .asidecol {
   display: none;
+  margin-left: 4rem;
 }
+
+.asidecol h2 {
+  margin-bottom: 3rem;
+  display: block;
+  border-bottom: 1px solid #d9d9d9;
+  text-align: start;
+  cursor: pointer;
+  padding: 1rem 0rem;
+  margin-bottom: 2rem;
+}
+
+.make-me-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 0 15px;
+}
+
+.sidebar-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* .make-Nav-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 0 15px;
+}
+
+.sidebarNav-item {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+} */
 
 @media only screen and (min-width: 1024px) {
   p.see {

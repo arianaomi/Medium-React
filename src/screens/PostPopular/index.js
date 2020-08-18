@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { getPosts } from '../../server'
 import CardGeneral from '../../components/CardGeneral'
+import MenuSub from '../../components/MenuSub'
+import { Link } from 'react-router-dom'
 
 const PostPopular = () => {
   const [cardsPopular, setCardsPopular] = useState([])
@@ -23,23 +25,25 @@ const PostPopular = () => {
 
   let UICardsPopular = popularArr.map(
     ({ title, subtitle, author, hour, content, popular, img, key }) => (
-      <CardGeneral
-        screen='popular'
-        key={key}
-        title={title}
-        subtitle={subtitle}
-        author={author}
-        content={content}
-        img={img}
-      />
+      <Link className='anchor' to={`/${key}`}>
+        <CardGeneral
+          screen='popular'
+          key={key}
+          title={title}
+          subtitle={subtitle}
+          author={author}
+          content={content}
+          img={img}
+        />
+      </Link>
     )
   )
 
   return (
     <>
       <div onScroll={() => console.log('hi')}>
-        <div>
-          <h3>Contenedor 1</h3>
+        <div className='menuSub'>
+          <MenuSub />
         </div>
         <div>{UICardsPopular}</div>
       </div>

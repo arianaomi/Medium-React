@@ -14,6 +14,8 @@ import { Link } from "react-router-dom";
 //Components
 
 import AsideCard from '../../components/AsideCard'
+import MenuSub from '../../components/MenuSub'
+
 //Server
 import { getPosts } from '../../server'
 //CSS
@@ -39,7 +41,6 @@ function Home() {
         }
 
         let newArr = cardsHome.concat(cardsArr)
-        console.log(newArr)
         setCardsHome(newArr)
       })
     }
@@ -106,14 +107,12 @@ function Home() {
   let popularArr = cardsHome
     .filter(({ popular }) => popular === true)
     .slice(0, 4)
-  console.log(popularArr)
 
   let UIAside = popularArr.map(
     ({ title, subtitle, author, hour, content, popular, img, key }, index) => (
       <Link to={`/${key}`} className='anchor'>
         <AsideCard
           count={index}
-          key={key}
           title={title}
           subtitle={subtitle}
           author={author}
@@ -154,6 +153,11 @@ function Home() {
       <Container onScroll={handleScroll} className='hi'>
         <Row>
           <Col>
+            <MenuSub />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
             <NavbarSticky />
           </Col>
         </Row>
@@ -163,7 +167,14 @@ function Home() {
         </Row>
         <Row className='rowGeneral'>
           <Col className='cardGeneral'>{UICardGeneral}</Col>
-          <Col className='asidecol'>{UIAside}</Col>
+          <Col className='asidecol '>
+            <div className='sidebar-item'>
+              <div className='make-me-sticky'>
+                <h2>Popular on medium</h2>
+                {UIAside}
+              </div>
+            </div>
+          </Col>
         </Row>
       </Container>
     </>

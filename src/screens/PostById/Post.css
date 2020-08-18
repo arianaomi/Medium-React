@@ -1,6 +1,10 @@
 .containerPost {
-  width: 60%;
-  margin: auto;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 5%;
+
+  text-align: left;
 }
 
 .title__containerPost {
@@ -23,6 +27,8 @@
 .imgProfilePost {
   border-radius: 3rem;
   width: 70%;
+  padding: 2px;
+  border: 1px solid #23ac81;
 }
 
 .text__containerPost {
@@ -31,11 +37,78 @@
 .paragraphPost {
   font-size: 25px;
   line-height: 3rem;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .title__textPost {
   font-weight: lighter;
   font-size: 50px;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.btn-follow {
+  background: transparent;
+  margin-left: 10px;
+  padding: 2px 15px;
+
+  border: 1px solid rgba(41, 122, 255, 1);
+  border-radius: 5px;
+  color: rgba(41, 122, 255, 1);
+}
+
+.subtitle-p {
+  line-height: 32px;
+  margin: 0.79em 0px;
+  font-size: 24px;
+
+  letter-spacing: 0;
+  font-weight: 300;
+  color: rgba(117, 117, 117, 1);
+}
+.datLogos {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.iconos-id img {
+  margin: 0px 10px;
+}
+
+footer {
+  background-color: rgb(21, 20, 20);
+  margin: 0px -13%;
+  margin-top: 50px;
+  padding: 0px 13%;
+  padding-top: 10px;
+  color: white;
+}
+
+footer div p {
+  color: rgba(117, 117, 117, 1);
+  font-size: 0.9rem;
+  padding: 10px 5px;
+}
+.foot {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  margin: 10px;
+  border-bottom: 1px solid whitesmoke;
+}
+
+footer div img {
+  width: 50%;
+  padding: 30px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .foot {
+    flex-direction: row;
+  }
+  footer div img {
+    width: 20%;
+  }
+  .containerPost {
+    width: 60%;
+    padding-left: 0%;
+  }
 }
