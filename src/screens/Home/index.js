@@ -17,6 +17,8 @@ function Home() {
   window.onscroll = function (ev) {
     let diff = document.documentElement.scrollHeight - window.scrollY
     let load = document.body.offsetHeight + 10
+    console.log(diff)
+    console.log(load)
 
     if (diff <= load) {
       getPosts().then(data => {
@@ -28,7 +30,8 @@ function Home() {
         }
 
         let newArr = cardsHome.concat(cardsArr)
-        setCardsCenter(newArr)
+        console.log(newArr)
+        setCardsHome(newArr)
       })
     }
   }
@@ -101,7 +104,7 @@ function Home() {
         </Row>
         <Row className='recentSection'>
           <Col className='middleSection'>{UICardCenter}</Col>
-          <p className='see'> SEE EDITOR'S PICKS> </p>
+          <p className='see'> SEE EDITOR'S PICKS </p>
         </Row>
         <Row className='rowGeneral'>
           <Col className='cardGeneral'>{UICardGeneral}</Col>
