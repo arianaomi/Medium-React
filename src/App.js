@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Home from './screens/Home'
 import PostById from './screens/PostById'
 import PostPopular from './screens/PostPopular'
+import Form from './screens/Form'
 //Components
 import MenuSub from './components/MenuSub'
 //css
@@ -20,6 +21,9 @@ function App() {
           </Route>
           <Route path='/popular' exact>
             <PostPopular />
+          </Route>
+          <Route path='/form' exact>
+            <Form />
           </Route>
           <Route path='/:id' exact>
             <PostById />

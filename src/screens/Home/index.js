@@ -1,21 +1,49 @@
+
 import React, { useEffect, useState } from "react";
 import CardGeneral from "../../components/CardGeneral";
 import CardLeft from "../../components/CardLeft";
 import CardRight from "../../components/CardRight";
 import { Container, Row, Col } from "reactstrap";
 import MenuSub from "../../components/MenuSub";
-import "./Home.css";
 import NavbarSticky from "../../components/NavBar";
-
 import "./Home.css";
 
 import CentralComponent from "../../components/CentralComponent";
-import { getPosts } from "../../server";
+
 import { Link } from "react-router-dom";
+//Components
+
+import AsideCard from '../../components/AsideCard'
+//Server
+import { getPosts } from '../../server'
+//CSS
+import './Home.css'
+
 
 function Home() {
   const [cardsHome, setCardsHome] = useState([]);
   const [cardsCenter, setCardsCenter] = useState([]);
+
+  window.onscroll = function (ev) {
+    let diff = document.documentElement.scrollHeight - window.scrollY
+    let load = document.body.offsetHeight + 10
+
+    if (diff <= load) {
+      getPosts().then(data => {
+        let cardsArr = []
+
+        for (const key in data) {
+          let card = data[key]
+          card['key'] = key
+          cardsArr.push(card)
+        }
+
+        let newArr = cardsHome.concat(cardsArr)
+        console.log(newArr)
+        setCardsHome(newArr)
+      })
+    }
+  }
 
   useEffect(() => {
     getPosts().then((data) => {
@@ -48,6 +76,7 @@ function Home() {
     ({ title, subtitle, author, hour, content, popular, img, key }) => (
       <Link className="anchor" to={`/${key}`}>
         <CardGeneral
+          screen='home'
           key={key}
           title={title}
           subtitle={subtitle}
@@ -74,7 +103,29 @@ function Home() {
     )
   );
 
+  let popularArr = cardsHome
+    .filter(({ popular }) => popular === true)
+    .slice(0, 4)
+  console.log(popularArr)
+
+  let UIAside = popularArr.map(
+    ({ title, subtitle, author, hour, content, popular, img, key }, index) => (
+      <Link to={`/${key}`} className='anchor'>
+        <AsideCard
+          count={index}
+          key={key}
+          title={title}
+          subtitle={subtitle}
+          author={author}
+          content={content}
+          img={img}
+        />
+      </Link>
+    )
+  )
+
   return (
+
     <Container className="hi">
       <Row>
         <Col>
@@ -97,8 +148,27 @@ function Home() {
           {UICardGeneral}
         </Col>
       </Row>
-    </Container>
-  );
+    </Container> 
+
+    <>
+      <Container onScroll={handleScroll} className='hi'>
+        <Row>
+          <Col>
+            <NavbarSticky />
+          </Col>
+        </Row>
+        <Row className='recentSection'>
+          <Col className='middleSection'>{UICardCenter}</Col>
+          <p className='see'> SEE EDITOR'S PICKS </p>
+        </Row>
+        <Row className='rowGeneral'>
+          <Col className='cardGeneral'>{UICardGeneral}</Col>
+          <Col className='asidecol'>{UIAside}</Col>
+        </Row>
+      </Container>
+    </>
+  )
+
 }
 
 export default Home;

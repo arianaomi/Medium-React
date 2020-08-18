@@ -1,11 +1,15 @@
 import React from 'react'
+import moment from 'moment'
 
+//CSS
 import './CardGeneral.css'
 
-function CardGeneral({ title, subtitle, author, hour, img }) {
+function CardGeneral({ screen, title, subtitle, author, hour, img }) {
+  let date = moment.utc(hour).format('lll')
+
   return (
     <>
-      <div className='Card'>
+      <div className={`Card ${screen}`}>
         <div className='contentCard'>
           <h5>BASED ON YOUR READING HISTORY</h5>
           <h1 className='title'>{title}</h1>
@@ -13,7 +17,7 @@ function CardGeneral({ title, subtitle, author, hour, img }) {
           <div className='sectionExtra'>
             <div className='infoExtra'>
               <p>{author}</p>
-              <p>date</p>
+              <p className='date'>{date} · read ★</p>
             </div>
             <div>
               <svg

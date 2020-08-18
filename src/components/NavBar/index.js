@@ -70,6 +70,7 @@ class NavbarSticky extends Component {
     return (
       <div className='NavBarSticky'>
         <ScrollMenu
+          className='mar'
           data={menu}
           arrowLeft={ArrowLeft}
           arrowRight={ArrowRight}

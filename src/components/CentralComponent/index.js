@@ -1,17 +1,21 @@
 import React from 'react'
+import moment from 'moment'
+//CSS
 import './centralCards.css'
 
 function CentralComponent({ title, subtitle, author, img, hour }) {
+  let date = moment.utc(hour).format('lll')
+
   return (
     <div className='card-container'>
-      <img className='cardImg' src={img} alt='Card image cap' />
+      <img className='cardImg' src={img} alt-text='' />
       <div className='left'>
         <h3 className='title__item'>{title}</h3>
 
         <div className='iconos-author'>
           <p className='ellipsis'>
-            <span className=''>{author} </span>
-            <span className='description'>Aug 17,2020 7 min · read ★</span>
+            <span className='author'>{author} </span>
+            <span className='description'>{date} · read ★</span>
           </p>
           <div className='iconos'>
             <svg
@@ -19,7 +23,6 @@ function CentralComponent({ title, subtitle, author, img, hour }) {
               width='20'
               height='20'
               viewBox='0 0 16 16'
-              className='bi bi-bookmark'
               fill='currentColor'
               xmlns='http://www.w3.org/2000/svg'
             >

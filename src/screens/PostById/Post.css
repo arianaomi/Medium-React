@@ -1,0 +1,41 @@
+.containerPost {
+  width: 60%;
+  margin: auto;
+}
+
+.title__containerPost {
+  margin-bottom: 20px;
+}
+
+.datas__containerPost {
+  margin-bottom: 30px;
+  display: flex;
+}
+
+.date__Post {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 1rem;
+}
+
+.imgCardPost {
+  width: 100%;
+}
+.imgProfilePost {
+  border-radius: 3rem;
+  width: 70%;
+}
+
+.text__containerPost {
+  margin-top: 40px;
+}
+.paragraphPost {
+  font-size: 25px;
+  line-height: 3rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.title__textPost {
+  font-weight: lighter;
+  font-size: 50px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
