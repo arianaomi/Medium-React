@@ -13,6 +13,8 @@ p.see {
   margin-bottom: 2rem;
 }
 .rowGeneral {
+  display: flex;
+  justify-content: space-between;
   margin-top: 5%;
 }
 
@@ -22,6 +24,10 @@ p.see {
 .middleSection {
   width: 100%;
 }
+.asidecol {
+  display: none;
+}
+
 @media only screen and (min-width: 1024px) {
   p.see {
     padding-bottom: 1rem;
@@ -34,5 +40,13 @@ p.see {
   }
   .middleSection {
     width: 40%;
+  }
+  .asidecol {
+    display: inline;
+    width: 40%;
+    padding-left: 7%;
+    position: sticky;
+    top: 0;
+    z-index: 1;
   }
 }

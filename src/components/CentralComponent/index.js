@@ -5,7 +5,6 @@ import './centralCards.css'
 
 function CentralComponent({ title, subtitle, author, img, hour }) {
   let date = moment.utc(hour).format('lll')
-  console.log(date)
 
   return (
     <div className='card-container'>
