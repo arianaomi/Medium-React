@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.Card {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  margin-bottom: 24px;
+
+  position: relative;
+}
+.popular {
+  width: 70%;
+  padding-left: 10%;
+}
+.home {
+  width: 100%;
+}
+.contentCard {
+  width: 75%;
+  text-align: left;
+}
+.imgCard {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.title {
+  font-size: 1rem;
+  max-height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
+  letter-spacing: -0.17px;
+  transform: translateY(0.96px);
+  color: rgba(0, 0, 0, 0.84);
+  fill: rgba(0, 0, 0, 0.84);
+  margin-bottom: 4px;
+  cursor: pointer;
+  padding-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  margin: 0;
+  display: none;
+}
+.sectionExtra {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12px;
+  align-items: flex-end;
+}
+
+.infoExtra p {
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.84);
+}
+
+.cardBoot {
+  display: flex;
+  flex-direction: row;
+}
+p.date {
+  color: rgba(0, 0, 0, 0.54);
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+svg {
+  color: #747474;
+}
+
+h5 {
+  color: rgba(0, 0, 0, 0.54);
+  font-weight: 400;
+}
+@media only screen and (min-width: 1024px) {
+  .Card {
+    max-width: 680;
+    height: 143px;
+    margin-bottom: 35px;
+  }
+  .imgCard {
+    display: block;
+    line-height: 20px;
+    height: 100%;
+    width: 152px;
+  }
+  .title {
+    font-size: 1.3rem;
+    max-height: 50px;
+    padding: 0px;
+    padding-top: 5px;
+    font-weight: 700;
+    padding-right: 10px;
+  }
+  .subtitle {
+    font-size: 0.88rem;
+    margin-top: 7px;
+    display: block;
+    height: 35px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 15px;
+    color: rgba(0, 0, 0, 0.54);
+  }
+  .contentCard {
+    width: 75%;
+  }
+  .sectionExtra {
+    padding-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 504px) {
+  .Card {
+    width: 100%;
+    flex: 1 1 auto;
+  }
+  .imgCard {
+    width: 80px;
+    height: 80px;
+  }
+}
