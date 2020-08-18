@@ -6,6 +6,10 @@ import CardGeneral from '../../components/CardGeneral'
 import NavbarSticky from '../../components/NavBar'
 import CentralComponent from '../../components/CentralComponent'
 import AsideCard from '../../components/AsideCard'
+import MenuSub from '../../components/MenuSub'
+import CardLeft from '../../components/CardLeft'
+import CardRight from '../../components/CardRight'
+
 //Server
 import { getPosts } from '../../server'
 //CSS
@@ -30,7 +34,6 @@ function Home() {
         }
 
         let newArr = cardsHome.concat(cardsArr)
-        console.log(newArr)
         setCardsHome(newArr)
       })
     }
@@ -40,6 +43,7 @@ function Home() {
     getPosts().then(data => {
       let parsedCards = []
       let parsedCardsCentral = []
+
       let reverseArr = []
       for (let key in data) {
         let card = data[key]
@@ -51,7 +55,9 @@ function Home() {
         setCardsHome(parsedCards)
       }
       reverseArr = parsedCards
+
       parsedCardsCentral = reverseArr.reverse().slice(1, 4)
+
       if (parsedCardsCentral) {
         setCardsCenter(parsedCardsCentral)
       }
@@ -97,14 +103,12 @@ function Home() {
   let popularArr = cardsHome
     .filter(({ popular }) => popular === true)
     .slice(0, 4)
-  console.log(popularArr)
 
   let UIAside = popularArr.map(
     ({ title, subtitle, author, hour, content, popular, img, key }, index) => (
       <Link to={`/${key}`} className='anchor'>
         <AsideCard
           count={index}
-          key={key}
           title={title}
           subtitle={subtitle}
           author={author}
@@ -120,16 +124,40 @@ function Home() {
       <Container onScroll={handleScroll} className='hi'>
         <Row>
           <Col>
+            <MenuSub />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
             <NavbarSticky />
           </Col>
         </Row>
         <Row className='recentSection'>
+          <Col>
+            <CardLeft />
+          </Col>
           <Col className='middleSection'>{UICardCenter}</Col>
-          <p className='see'> SEE EDITOR'S PICKS </p>
+
+          <Col>
+            <CardRight />
+          </Col>
         </Row>
+        <p className='see'> SEE EDITOR'S PICKS </p>
         <Row className='rowGeneral'>
           <Col className='cardGeneral'>{UICardGeneral}</Col>
-          <Col className='asidecol'>{UIAside}</Col>
+          <Col className='asidecol '>
+            <div className='sidebar-item'>
+              <div className='make-me-sticky'>
+                <h2>Popular on medium</h2>
+                {UIAside}
+                <footer className='footerhome'>
+                  <p className='phome'>
+                    Help Status Writers Blog Careers Privacy Terms About{' '}
+                  </p>
+                </footer>
+              </div>
+            </div>
+          </Col>
         </Row>
       </Container>
     </>

@@ -1,0 +1,22 @@
+.cardLeftImg {
+  width: 350px;
+  height: 150px;
+}
+.cardLeft {
+  justify-content: center;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.cardTitle {
+  font-weight: bold;
+  font-size: 27px;
+}
+
+.description {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 0.8rem;
+  overflow: hidden;
+  max-height: 40px;
+  text-overflow: ellipsis;
+}
