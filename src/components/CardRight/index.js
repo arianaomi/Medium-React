@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 import { Card, CardImg, CardText, CardBody, CardTitle } from "reactstrap";
-import "./cardleft.css";
+import "./cardright.css";
 
-class CardLeft extends Component {
+class CardRight extends Component {
   render() {
     return (
       <div>
         <Card>
           <CardImg
-            className="cardLeftImg"
+            className="cardRightImg"
             top
             src="https://picsum.photos/200/300/?blur"
             alt="Card image cap"
           />
-          <CardBody className="cardLeft">
+          <CardBody className="cardRight">
             <CardTitle className="cardTitle">
               Usando el Hook de efecto
             </CardTitle>
@@ -43,4 +43,4 @@ class CardLeft extends Component {
   }
 }
 
-export default CardLeft;
+export default CardRight;

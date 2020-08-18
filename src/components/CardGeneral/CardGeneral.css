@@ -6,6 +6,7 @@
 .Card {
   display: flex;
   justify-content: space-between;
+  margin: 0;
   margin-bottom: 24px;
   width: 60%;
   position: relative;

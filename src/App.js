@@ -1,27 +1,33 @@
-import React from "react";
+import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 //screens
-import Cards from "./screens/Cards";
+import Home from './screens/Home'
+import PostById from './screens/PostById'
+import PostPopular from './screens/PostPopular'
+//Components
+import MenuSub from './components/MenuSub'
 //css
-import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Home from "./screens/Home";
-import MenuSub from "./components/MenuSub";
-
-import "./App.css";
+import './App.css'
 
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className='App'>
         <MenuSub />
         <Switch>
-          <Route path="/" exact={true}>
+          <Route path='/' exact>
             <Home />
+          </Route>
+          <Route path='/popular' exact>
+            <PostPopular />
+          </Route>
+          <Route path='/:id' exact>
+            <PostById />
           </Route>
         </Switch>
       </div>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App

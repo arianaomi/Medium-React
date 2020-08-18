@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Nav, NavItem, NavLink } from 'reactstrap'
+import { NavItem, NavLink } from 'reactstrap'
 import ScrollMenu from 'react-horizontal-scrolling-menu'
 import './navBar.css'
+import { Link } from 'react-router-dom'
 
 const list = [
   { name: 'HOME' },
@@ -23,7 +24,13 @@ const list = [
 const MenuItem = ({ text, selected }) => {
   return (
     <NavItem className='liItem'>
-      <NavLink href='#'>{text}</NavLink>
+      {text === 'POPULAR' ? (
+        <Link to={`/popular`} className='anchor'>
+          {text}
+        </Link>
+      ) : (
+        <NavLink href='#'>{text}</NavLink>
+      )}
     </NavItem>
   )
 }

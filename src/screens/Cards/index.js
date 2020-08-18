@@ -12,14 +12,12 @@ function Cards() {
         console.log(data)
         let parsedCards = []
         for (let key in data) {
-          console.log(key)
-          console.log(data)
           let card = data[key]
-          console.log('card', card)
+
           card['key'] = key
           parsedCards.push(card)
         }
-        console.log('parsed', parsedCards)
+
         if (parsedCards) {
           setCards(parsedCards)
         }
