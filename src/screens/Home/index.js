@@ -143,7 +143,6 @@ function Home() {
                     Help Status Writers Blog Careers Privacy Terms About{' '}
                   </p>
                 </footer>
-                git
               </div>
             </div>
           </Col>
