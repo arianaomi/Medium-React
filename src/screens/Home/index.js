@@ -5,6 +5,7 @@ import MenuSub from "../../components/MenuSub";
 import "./Home.css";
 import NavbarSticky from "../../components/NavBar";
 import ComponenteCentral from "../../components/ComponenteCentral";
+import AsideCard from "../../components/AsideCard";
 
 function Home() {
   const [cardsHome, setCardsHome] = useState([]);
@@ -54,8 +55,11 @@ function Home() {
         </Col>
       </Row>
       <Row>
-        <Col xs="12" md="5">
+        <Col xs="7" md="12">
           {UICardGeneral}
+        </Col>
+        <Col xs="5" md="12">
+          <AsideCard />
         </Col>
       </Row>
     </Container>
