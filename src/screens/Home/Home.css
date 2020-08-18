@@ -44,6 +44,7 @@ p.see {
   position: sticky;
   top: 0;
   padding: 0 15px;
+  padding-top: 2rem;
 }
 
 .sidebar-item {
@@ -58,16 +59,16 @@ p.see {
   position: sticky;
   top: 0;
   padding: 0 15px;
-}
+} */
 
 .sidebarNav-item {
-  position: absolute;
-  top: 35px;
-  left: 0;
-  z-index: 5;
-  width: 100%;
-  height: 100%;
-} */
+  position: -webkit-sticky !important;
+  position: sticky !important;
+
+  background-color: yellow;
+  padding: 50px;
+  font-size: 20px;
+}
 
 @media only screen and (min-width: 1024px) {
   p.see {
