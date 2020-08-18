@@ -41,21 +41,6 @@ function Home() {
 
   console.log(cardsCenter)
 
-  //
-  //         if (counter <= 3) {
-  //           parsedCards.push(card);
-  //           counter++;
-  //         } else {
-  //           console.log("Ya son 3");
-  //         }
-  //       }
-  //       console.log("parsed", parsedCards);
-  //       if (parsedCards) {
-  //         setCards(parsedCards);
-  //       }
-  //     });
-  // }, []);
-
   let UICardGeneral = cardsHome.map(
     ({ title, subtitle, author, hour, content, popular, img }, index) => (
       <CardGeneral
@@ -91,7 +76,9 @@ function Home() {
       </Row>
       <Row>
         <Col>{UICardCenter}</Col>
+        <p className='see'>SEE EDITOR'S PICKS > </p>
       </Row>
+
       <Row>
         <Col xs='12' md='5'>
           {UICardGeneral}

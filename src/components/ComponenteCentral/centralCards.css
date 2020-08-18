@@ -1,38 +1,70 @@
 .card-container {
   display: flex;
-  margin: 1rem;
-  margin-left: 2rem;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  width: 100%;
+  position: relative;
 }
 
 .cardImg {
-  margin-right: 1rem !important;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+
   position: relative;
-  right: 20px;
+
   margin-top: 0;
 }
 
 .description {
   color: rgba(0, 0, 0, 0.54);
-  font-size: 1rem;
-  overflow: hidden !important;
-  max-height: 40px !important;
-  text-overflow: ellipsis !important;
-  display: -webkit-box !important;
-  -webkit-line-clamp: 2 !important;
-  -webkit-box-orient: vertical;
+  font-size: 0.8rem;
+  overflow: hidden;
+  max-height: 40px;
+  text-overflow: ellipsis;
 }
 
 .title__item {
   color: rgba(0, 0, 0, 0.84);
   margin-top: 0px;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 600;
-  overflow: hidden !important;
-  max-height: 84px !important;
-  text-overflow: ellipsis !important;
-  margin-bottom: 2.5em;
+  overflow: hidden;
+  max-height: 84px;
+  text-overflow: ellipsis;
+  margin-bottom: 2em;
+}
+.iconos-author {
+  display: flex;
+  justify-content: space-between;
+}
+.ellipsis {
+  display: flex;
+  flex-direction: column;
+}
+.left {
+  width: 75%;
+  text-align: left;
+}
+svg {
+  font-size: 12px;
+}
+.disappear-desk {
+  display: block;
 }
 
-.left {
-  text-align: left;
+@media only screen and (min-width: 1024px) {
+  .card-container {
+    flex-direction: row;
+    width: 40%;
+  }
+  .cardImg {
+    width: 100px;
+    height: 100px;
+  }
+
+  .disappear-desk {
+    display: none;
+  }
 }

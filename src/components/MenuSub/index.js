@@ -82,7 +82,7 @@ function MenuSub() {
           </svg>
         </a>
 
-        <button type='button' classNames='btn disappear-mobile'>
+        <button type='button' className='btn disappear-mobile'>
           New post
         </button>
 
