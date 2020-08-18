@@ -16,7 +16,10 @@
 
   margin-top: 0;
 }
-
+.author {
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.84);
+}
 .description {
   color: rgba(0, 0, 0, 0.54);
   font-size: 0.8rem;
@@ -46,6 +49,7 @@
 .left {
   width: 75%;
   text-align: left;
+  margin-left: 0px;
 }
 svg {
   font-size: 12px;
@@ -57,7 +61,7 @@ svg {
 @media only screen and (min-width: 1024px) {
   .card-container {
     flex-direction: row;
-    width: 40%;
+    /* width: 40%; */
   }
   .cardImg {
     width: 100px;
@@ -66,5 +70,10 @@ svg {
 
   .disappear-desk {
     display: none;
+  }
+  .left {
+    width: 75%;
+    text-align: left;
+    margin-left: 15px;
   }
 }

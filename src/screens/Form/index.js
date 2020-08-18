@@ -1,28 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 //Custom components
 import CardForm from './Components/CardForm'
 
-function Cards() {
+function Form() {
   const [cards, setCards] = useState([])
-
-  useEffect(() => {
-    fetch('https://reactsessions-ac545.firebaseio.com/equipocuatro.json')
-      .then(response => response.json())
-      .then(data => {
-        console.log(data)
-        let parsedCards = []
-        for (let key in data) {
-          let card = data[key]
-
-          card['key'] = key
-          parsedCards.push(card)
-        }
-
-        if (parsedCards) {
-          setCards(parsedCards)
-        }
-      })
-  }, [])
 
   const handleForm = (title, subtitle, author, hour, content, popular, img) => {
     fetch('https://reactsessions-ac545.firebaseio.com/equipocuatro.json', {
@@ -47,18 +28,10 @@ function Cards() {
         setCards(newUsers)
       })
   }
-
-  const UICards = cards.map(
-    ({ title, subtitle, author, hour, content, popular }, index) => (
-      <li key={index}>
-        {title} {subtitle}
-      </li>
-    )
-  )
   return (
     <>
       <CardForm callback={handleForm} />
     </>
   )
 }
-export default Cards
+export default Form

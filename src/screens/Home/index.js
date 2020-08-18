@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import CardGeneral from '../../components/CardGeneral'
+import { Link } from 'react-router-dom'
 import { Container, Row, Col } from 'reactstrap'
-import './Home.css'
+//Components
+import CardGeneral from '../../components/CardGeneral'
 import NavbarSticky from '../../components/NavBar'
 import CentralComponent from '../../components/CentralComponent'
+//Server
 import { getPosts } from '../../server'
-import { Link } from 'react-router-dom'
+//CSS
+import './Home.css'
 
 function Home() {
   const [cardsHome, setCardsHome] = useState([])
@@ -42,6 +45,7 @@ function Home() {
     ({ title, subtitle, author, hour, content, popular, img, key }) => (
       <Link className='anchor' to={`/${key}`}>
         <CardGeneral
+          screen='home'
           key={key}
           title={title}
           subtitle={subtitle}
@@ -70,22 +74,18 @@ function Home() {
 
   return (
     <>
-      <Container onClick={handleScroll} className='hi'>
+      <Container onScroll={handleScroll} className='hi'>
         <Row>
           <Col>
             <NavbarSticky />
           </Col>
         </Row>
-        <Row>
-          <Col>
-            {UICardCenter}
-            <p className='see'> SEE EDITOR'S PICKS> </p>
-          </Col>
+        <Row className='recentSection'>
+          <Col className='middleSection'>{UICardCenter}</Col>
+          <p className='see'> SEE EDITOR'S PICKS> </p>
         </Row>
-        <Row>
-          <Col xs='12' md='5'>
-            {UICardGeneral}
-          </Col>
+        <Row className='rowGeneral'>
+          <Col className='cardGeneral'>{UICardGeneral}</Col>
         </Row>
       </Container>
     </>
