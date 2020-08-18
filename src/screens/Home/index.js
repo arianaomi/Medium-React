@@ -7,6 +7,8 @@ import NavbarSticky from '../../components/NavBar'
 import CentralComponent from '../../components/CentralComponent'
 import AsideCard from '../../components/AsideCard'
 import MenuSub from '../../components/MenuSub'
+import CardLeft from '../../components/CardLeft'
+import CardRight from '../../components/CardRight'
 
 //Server
 import { getPosts } from '../../server'
@@ -41,6 +43,7 @@ function Home() {
     getPosts().then(data => {
       let parsedCards = []
       let parsedCardsCentral = []
+
       let reverseArr = []
       for (let key in data) {
         let card = data[key]
@@ -52,7 +55,9 @@ function Home() {
         setCardsHome(parsedCards)
       }
       reverseArr = parsedCards
+
       parsedCardsCentral = reverseArr.reverse().slice(1, 4)
+
       if (parsedCardsCentral) {
         setCardsCenter(parsedCardsCentral)
       }
@@ -128,9 +133,16 @@ function Home() {
           </Col>
         </Row>
         <Row className='recentSection'>
+          <Col>
+            <CardLeft />
+          </Col>
           <Col className='middleSection'>{UICardCenter}</Col>
-          <p className='see'> SEE EDITOR'S PICKS </p>
+
+          <Col>
+            <CardRight />
+          </Col>
         </Row>
+        <p className='see'> SEE EDITOR'S PICKS </p>
         <Row className='rowGeneral'>
           <Col className='cardGeneral'>{UICardGeneral}</Col>
           <Col className='asidecol '>
