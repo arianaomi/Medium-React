@@ -6,6 +6,8 @@ import CardGeneral from '../../components/CardGeneral'
 import NavbarSticky from '../../components/NavBar'
 import CentralComponent from '../../components/CentralComponent'
 import AsideCard from '../../components/AsideCard'
+import MenuSub from '../../components/MenuSub'
+
 //Server
 import { getPosts } from '../../server'
 //CSS
@@ -30,7 +32,6 @@ function Home() {
         }
 
         let newArr = cardsHome.concat(cardsArr)
-        console.log(newArr)
         setCardsHome(newArr)
       })
     }
@@ -97,14 +98,12 @@ function Home() {
   let popularArr = cardsHome
     .filter(({ popular }) => popular === true)
     .slice(0, 4)
-  console.log(popularArr)
 
   let UIAside = popularArr.map(
     ({ title, subtitle, author, hour, content, popular, img, key }, index) => (
       <Link to={`/${key}`} className='anchor'>
         <AsideCard
           count={index}
-          key={key}
           title={title}
           subtitle={subtitle}
           author={author}
@@ -118,6 +117,11 @@ function Home() {
   return (
     <>
       <Container onScroll={handleScroll} className='hi'>
+        <Row>
+          <Col>
+            <MenuSub />
+          </Col>
+        </Row>
         <Row>
           <Col>
             <NavbarSticky />

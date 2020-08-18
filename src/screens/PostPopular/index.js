@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { getPosts } from '../../server'
 import CardGeneral from '../../components/CardGeneral'
+import MenuSub from '../../components/MenuSub'
 
 const PostPopular = () => {
   const [cardsPopular, setCardsPopular] = useState([])
@@ -38,8 +39,8 @@ const PostPopular = () => {
   return (
     <>
       <div onScroll={() => console.log('hi')}>
-        <div>
-          <h3>Contenedor 1</h3>
+        <div className='menuSub'>
+          <MenuSub />
         </div>
         <div>{UICardsPopular}</div>
       </div>
