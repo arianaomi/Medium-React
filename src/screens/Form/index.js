@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 //Custom components
 import CardForm from './Components/CardForm'
+import MenuSub from '../../components/MenuSub'
 
 function Form() {
   const [cards, setCards] = useState([])
@@ -26,10 +27,12 @@ function Form() {
           { title, subtitle, author, hour, content, popular, img, key: key },
         ]
         setCards(newUsers)
+        alert('Publicado')
       })
   }
   return (
     <>
+      <MenuSub />
       <CardForm callback={handleForm} />
     </>
   )
