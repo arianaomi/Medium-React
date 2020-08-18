@@ -118,15 +118,8 @@ function Home() {
   return (
     <>
       <Container onScroll={handleScroll} className="hi">
-        <Row>
-          <Col>
-            <div className="sidebarNav-item">
-              <div className="make-Nav-sticky">
-                <NavbarSticky />
-              </div>
-            </div>
-          </Col>
-        </Row>
+        <NavbarSticky />
+
         <Row className="recentSection">
           <Col className="middleSection">{UICardCenter}</Col>
           <p className="see"> SEE EDITOR'S PICKS </p>
