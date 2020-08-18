@@ -9,10 +9,20 @@
 
 .datas__containerPost {
   margin-bottom: 30px;
+  display: flex;
+}
+
+.date__Post {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 1rem;
 }
 
 .imgCardPost {
   width: 100%;
+}
+.imgProfilePost {
+  border-radius: 3rem;
+  width: 70%;
 }
 
 .text__containerPost {

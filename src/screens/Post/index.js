@@ -8,8 +8,16 @@ function Post() {
         <h1 className="title__textPost">White People Are Broken </h1>
       </div>
       <div className="datas__containerPost">
-        <p>Katherine Fugate</p>
-        <p>Aug 22, 2018 · 7 min read</p>
+        <div>
+          <img
+            className="imgProfilePost"
+            src=" https://miro.medium.com/fit/c/96/96/1*gYzstxJPP21JUOIXHOX4Nw.jpeg"
+          />
+        </div>
+        <div>
+          <p>Katherine Fugate</p>
+          <p className="date__Post">Aug 22, 2018 · 7 min read</p>
+        </div>
       </div>
       <div>
         <img
