@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import CardGeneral from '../../components/CardGeneral'
 import { Container, Row, Col } from 'reactstrap'
-import MenuSub from '../../components/MenuSub'
+
 import './Home.css'
 import NavbarSticky from '../../components/NavBar'
 import ComponenteCentral from '../../components/ComponenteCentral'
@@ -66,6 +66,13 @@ function Home() {
       />
     )
   )
+  var viewportHeight = window.innerHeight
+  console.log(viewportHeight)
+
+  window.addEventListener('scroll', event => {
+    var scollPosition = window.scrollY
+    console.log(scollPosition)
+  })
 
   return (
     <Container className='hi'>
@@ -76,13 +83,11 @@ function Home() {
       </Row>
       <Row>
         <Col>{UICardCenter}</Col>
-        <p className='see'>SEE EDITOR'S PICKS > </p>
+        <p className='see'>SEE EDITOR'S PICKS {'>'} </p>
       </Row>
-
+      {UICardGeneral}
       <Row>
-        <Col xs='12' md='5'>
-          {UICardGeneral}
-        </Col>
+        <Col xs='12' md='5'></Col>
       </Row>
     </Container>
   )

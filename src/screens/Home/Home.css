@@ -14,4 +14,5 @@ p.see {
   padding-bottom: 0.5rem;
   margin-bottom: 1.5rem;
   text-align: end;
+  cursor: pointer;
 }
