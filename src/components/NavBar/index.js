@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Nav, NavItem, NavLink } from 'reactstrap'
+import { NavItem, NavLink } from 'reactstrap'
 import ScrollMenu from 'react-horizontal-scrolling-menu'
 import './navBar.css'
 

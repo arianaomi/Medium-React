@@ -1,13 +1,13 @@
 import React from 'react'
+
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 //screens
-import Cards from './screens/Cards'
+import Home from './screens/Home'
+//Components
+import MenuSub from './components/MenuSub'
 //css
 import './App.css'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-import Home from './screens/Home'
-import MenuSub from './components/MenuSub'
 
-import './App.css'
 function App() {
   return (
     <Router>
