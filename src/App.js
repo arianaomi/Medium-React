@@ -20,6 +20,7 @@ function App() {
           <Route path='/popular' exact>
             <PostPopular />
           </Route>
+
           <Route path='/form' exact>
             <Form />
           </Route>

@@ -133,7 +133,14 @@ function Home() {
         </Row>
         <Row className='rowGeneral'>
           <Col className='cardGeneral'>{UICardGeneral}</Col>
-          <Col className='asidecol'>{UIAside}</Col>
+          <Col className='asidecol '>
+            <div className='sidebar-item'>
+              <div className='make-me-sticky'>
+                <h2>Popular on medium</h2>
+                {UIAside}
+              </div>
+            </div>
+          </Col>
         </Row>
       </Container>
     </>
