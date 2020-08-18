@@ -138,6 +138,12 @@ function Home() {
               <div className='make-me-sticky'>
                 <h2>Popular on medium</h2>
                 {UIAside}
+                <footer className='footerhome'>
+                  <p className='phome'>
+                    Help Status Writers Blog Careers Privacy Terms About{' '}
+                  </p>
+                </footer>
+                git
               </div>
             </div>
           </Col>
