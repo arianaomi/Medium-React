@@ -3,8 +3,9 @@ import CardGeneral from '../../components/CardGeneral'
 import { Container, Row, Col } from 'reactstrap'
 import './Home.css'
 import NavbarSticky from '../../components/NavBar'
-import ComponenteCentral from '../../components/CentralComponent'
+import CentralComponent from '../../components/CentralComponent'
 import { getPosts } from '../../server'
+import { Link } from 'react-router-dom'
 
 function Home() {
   const [cardsHome, setCardsHome] = useState([])
@@ -32,51 +33,44 @@ function Home() {
     })
   }, [])
 
-  console.log('cent', cardsCenter)
-  console.log('home', cardsHome)
   /*Scroll */
   const handleScroll = event => {
     console.log('hi')
-    // const { scrollTop, clientHeight, scrollHeight } = event.currentTarget
-    // console.log('Height', scrollHeight)
-    // console.log('Top', scrollTop)
-    // console.log(clientHeight)
   }
 
   let UICardGeneral = cardsHome.map(
-    ({ title, subtitle, author, hour, content, popular, img }, index) => (
-      <CardGeneral
-        key={index}
-        title={title}
-        subtitle={subtitle}
-        author={author}
-        content={content}
-        img={img}
-      />
+    ({ title, subtitle, author, hour, content, popular, img, key }) => (
+      <Link className='anchor' to={`/${key}`}>
+        <CardGeneral
+          key={key}
+          title={title}
+          subtitle={subtitle}
+          author={author}
+          content={content}
+          img={img}
+        />
+      </Link>
     )
   )
 
   let UICardCenter = cardsCenter.map(
-    ({ title, subtitle, author, hour, content, popular, img }, index) => (
-      <ComponenteCentral
-        key={index}
-        title={title}
-        subtitle={subtitle}
-        author={author}
-        content={content}
-        img={img}
-      />
+    ({ title, subtitle, author, hour, content, popular, img, key }) => (
+      <Link to={`/${key}`} className='anchor'>
+        <CentralComponent
+          key={key}
+          title={title}
+          subtitle={subtitle}
+          author={author}
+          content={content}
+          img={img}
+        />
+      </Link>
     )
   )
 
   return (
     <>
-      <Container
-        className='hi'
-        onScroll={() => {
-          console.log('hi')
-        }}
-      >
+      <Container onClick={handleScroll} className='hi'>
         <Row>
           <Col>
             <NavbarSticky />
