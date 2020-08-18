@@ -14,6 +14,25 @@ function Home() {
   const [cardsHome, setCardsHome] = useState([])
   const [cardsCenter, setCardsCenter] = useState([])
 
+  window.onscroll = function (ev) {
+    let diff = document.documentElement.scrollHeight - window.scrollY
+    let load = document.body.offsetHeight + 10
+
+    if (diff <= load) {
+      getPosts().then(data => {
+        let cardsArr = []
+
+        for (const key in data) {
+          data[key]['key'] = key
+          cardsArr.push(data[key])
+        }
+
+        let newArr = cardsHome.concat(cardsArr)
+        setCardsCenter(newArr)
+      })
+    }
+  }
+
   useEffect(() => {
     getPosts().then(data => {
       let parsedCards = []
