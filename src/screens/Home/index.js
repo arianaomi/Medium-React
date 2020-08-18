@@ -5,6 +5,7 @@ import { Container, Row, Col } from 'reactstrap'
 import CardGeneral from '../../components/CardGeneral'
 import NavbarSticky from '../../components/NavBar'
 import CentralComponent from '../../components/CentralComponent'
+import AsideCard from '../../components/AsideCard'
 //Server
 import { getPosts } from '../../server'
 //CSS
@@ -17,16 +18,15 @@ function Home() {
   window.onscroll = function (ev) {
     let diff = document.documentElement.scrollHeight - window.scrollY
     let load = document.body.offsetHeight + 10
-    console.log(diff)
-    console.log(load)
 
     if (diff <= load) {
       getPosts().then(data => {
         let cardsArr = []
 
         for (const key in data) {
-          data[key]['key'] = key
-          cardsArr.push(data[key])
+          let card = data[key]
+          card['key'] = key
+          cardsArr.push(card)
         }
 
         let newArr = cardsHome.concat(cardsArr)
@@ -94,6 +94,27 @@ function Home() {
     )
   )
 
+  let popularArr = cardsHome
+    .filter(({ popular }) => popular === true)
+    .slice(0, 4)
+  console.log(popularArr)
+
+  let UIAside = popularArr.map(
+    ({ title, subtitle, author, hour, content, popular, img, key }, index) => (
+      <Link to={`/${key}`} className='anchor'>
+        <AsideCard
+          count={index}
+          key={key}
+          title={title}
+          subtitle={subtitle}
+          author={author}
+          content={content}
+          img={img}
+        />
+      </Link>
+    )
+  )
+
   return (
     <>
       <Container onScroll={handleScroll} className='hi'>
@@ -108,6 +129,7 @@ function Home() {
         </Row>
         <Row className='rowGeneral'>
           <Col className='cardGeneral'>{UICardGeneral}</Col>
+          <Col className='asidecol'>{UIAside}</Col>
         </Row>
       </Container>
     </>

@@ -6,7 +6,6 @@ import './CardGeneral.css'
 
 function CardGeneral({ screen, title, subtitle, author, hour, img }) {
   let date = moment.utc(hour).format('lll')
-  console.log(date)
 
   return (
     <>

@@ -5,7 +5,7 @@ import "./Post.css";
 import { getPost } from "../../server";
 
 //DRF
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const PostById = () => {
   const { id } = useParams();
@@ -16,7 +16,7 @@ const PostById = () => {
     });
   }, [id]);
 
-  const { title, subtitle, author, hour, content, popular, img, key } = post;
+  const { title, author, content, img } = post;
   return (
     <div className="containerPost">
       <div className="title__containerPost">
@@ -40,7 +40,6 @@ const PostById = () => {
       <div className="text__containerPost">
         <p className="paragraphPost">{content}</p>
       </div>
-      <Link to="/">Regresar</Link>
     </div>
   );
 };
