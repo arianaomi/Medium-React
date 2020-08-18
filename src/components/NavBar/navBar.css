@@ -25,6 +25,10 @@
   justify-content: center;
 }
 
+.liItem a:hover {
+  color: black;
+}
+
 @media only screen and (min-width: 1024px) {
   .NavBarSticky {
     width: 80vw;

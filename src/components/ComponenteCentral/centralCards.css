@@ -1,5 +1,6 @@
 .card-container {
   display: flex;
+  align-items: start;
   margin: 1rem;
   margin-left: 2rem;
 }
@@ -9,6 +10,7 @@
   position: relative;
   right: 20px;
   margin-top: 0;
+  width: 30%;
 }
 
 .description {
@@ -30,7 +32,7 @@
   overflow: hidden !important;
   max-height: 84px !important;
   text-overflow: ellipsis !important;
-  margin-bottom: 2.5em;
+  margin-bottom: 10px;
 }
 
 .left {

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CardGeneral from "../../components/CardGeneral";
+import CardLeft from "../../components/CardLeft";
 import { Container, Row, Col } from "reactstrap";
 import MenuSub from "../../components/MenuSub";
 import "./Home.css";
@@ -49,12 +50,18 @@ function Home() {
         </Col>
       </Row>
       <Row>
-        <Col>
+        <Col md="4">
+          <CardLeft />
+        </Col>
+        <Col md="4">
           <ComponenteCentral />
+        </Col>
+        <Col md="4">
+          <CardLeft />
         </Col>
       </Row>
       <Row>
-        <Col xs="12" md="5">
+        <Col xs="12" md="8">
           {UICardGeneral}
         </Col>
       </Row>
