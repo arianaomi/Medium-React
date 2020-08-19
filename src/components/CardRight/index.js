@@ -10,7 +10,7 @@ class CardRight extends Component {
           <CardImg
             className="cardRightImg"
             top
-            src="https://picsum.photos/200/300/?blur"
+            src="https://cdn-images-1.medium.com/focal/378/167/34/26/1*pAuK1yGof1wOsjx2RLHu0g.jpeg"
             alt="Card image cap"
           />
           <CardBody className="cardRight">
