@@ -1,0 +1,36 @@
+.NavBarSticky {
+  position: -webkit-sticky;
+  position: sticky;
+  width: 90vw;
+  height: 100%;
+  font-size: 14px;
+  margin: 10px 0px;
+  list-style: none;
+  padding: 10px;
+  display: inline-block;
+  z-index: 10;
+  top: 0;
+  background-color: #fff;
+}
+.mar {
+  margin-left: -109px;
+}
+
+.liItem {
+  width: 100px;
+  margin: 0px;
+  padding: 0px;
+}
+.liItem a {
+  color: #6c757d;
+  text-decoration-line: none;
+  padding: 0%;
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 1024px) {
+  .NavBarSticky {
+    width: 80vw;
+  }
+}
