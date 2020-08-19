@@ -1,5 +1,5 @@
-
 import React, { useEffect, useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import CardGeneral from "../../components/CardGeneral";
 import CardLeft from "../../components/CardLeft";
 import CardRight from "../../components/CardRight";
@@ -13,38 +13,36 @@ import CentralComponent from "../../components/CentralComponent";
 import { Link } from "react-router-dom";
 //Components
 
-import AsideCard from '../../components/AsideCard'
-import MenuSub from '../../components/MenuSub'
+import AsideCard from "../../components/AsideCard";
 
 //Server
-import { getPosts } from '../../server'
+import { getPosts } from "../../server";
 //CSS
-import './Home.css'
-
+import "./Home.css";
 
 function Home() {
   const [cardsHome, setCardsHome] = useState([]);
   const [cardsCenter, setCardsCenter] = useState([]);
 
   window.onscroll = function (ev) {
-    let diff = document.documentElement.scrollHeight - window.scrollY
-    let load = document.body.offsetHeight + 10
+    let diff = document.documentElement.scrollHeight - window.scrollY;
+    let load = document.body.offsetHeight + 10;
 
     if (diff <= load) {
-      getPosts().then(data => {
-        let cardsArr = []
+      getPosts().then((data) => {
+        let cardsArr = [];
 
         for (const key in data) {
-          let card = data[key]
-          card['key'] = key
-          cardsArr.push(card)
+          let card = data[key];
+          card["key"] = key;
+          cardsArr.push(card);
         }
 
-        let newArr = cardsHome.concat(cardsArr)
-        setCardsHome(newArr)
-      })
+        let newArr = cardsHome.concat(cardsArr);
+        setCardsHome(newArr);
+      });
     }
-  }
+  };
 
   useEffect(() => {
     getPosts().then((data) => {
@@ -77,7 +75,7 @@ function Home() {
     ({ title, subtitle, author, hour, content, popular, img, key }) => (
       <Link className="anchor" to={`/${key}`}>
         <CardGeneral
-          screen='home'
+          screen="home"
           key={key}
           title={title}
           subtitle={subtitle}
@@ -106,11 +104,11 @@ function Home() {
 
   let popularArr = cardsHome
     .filter(({ popular }) => popular === true)
-    .slice(0, 4)
+    .slice(0, 4);
 
   let UIAside = popularArr.map(
     ({ title, subtitle, author, hour, content, popular, img, key }, index) => (
-      <Link to={`/${key}`} className='anchor'>
+      <Link to={`/${key}`} className="anchor">
         <AsideCard
           count={index}
           title={title}
@@ -121,65 +119,61 @@ function Home() {
         />
       </Link>
     )
-  )
+  );
 
   return (
-
-    <Container className="hi">
-      <Row>
-        <Col>
-          <NavbarSticky />
-        </Col>
-      </Row>
-      <Row>
-        <Col md="4">
-          <CardLeft />
-        </Col>
-        <Col md="4">
-          <CentralComponent />
-        </Col>
-        <Col md="4">
-          <CardRight />
-        </Col>
-      </Row>
-      <Row>
-        <Col xs="12" md="8">
-          {UICardGeneral}
-        </Col>
-      </Row>
-    </Container> 
-
     <>
-      <Container onScroll={handleScroll} className='hi'>
-        <Row>
-          <Col>
-            <MenuSub />
-          </Col>
-        </Row>
+      <Container className="hi">
         <Row>
           <Col>
             <NavbarSticky />
           </Col>
         </Row>
-        <Row className='recentSection'>
-          <Col className='middleSection'>{UICardCenter}</Col>
-          <p className='see'> SEE EDITOR'S PICKS </p>
+        <Row>
+          <Col md="4">
+            <CardLeft />
+          </Col>
+          <Col md="4">
+            <CentralComponent />
+          </Col>
+          <Col md="4">
+            <CardRight />
+          </Col>
         </Row>
-        <Row className='rowGeneral'>
-          <Col className='cardGeneral'>{UICardGeneral}</Col>
-          <Col className='asidecol '>
-            <div className='sidebar-item'>
-              <div className='make-me-sticky'>
-                <h2>Popular on medium</h2>
-                {UIAside}
-              </div>
-            </div>
+        <Row>
+          <Col xs="12" md="8">
+            {UICardGeneral}
           </Col>
         </Row>
       </Container>
-    </>
-  )
+      <Container onScroll={handleScroll} className="hi">
+        <Row>
+          <Col>
+            <MenuSub />
+          </Col>
+        </Row>
 
+        <Row className="recentSection">
+          <Col className="middleSection">{UICardCenter}</Col>
+          <p className="see"> SEE EDITOR'S PICKS </p>
+          <hr />
+          <div className="rowGeneral">
+            <Col className="cardGeneral" col="8">
+              {UICardGeneral}
+            </Col>
+            <Col className="asidecol" col="4">
+              <div className="sidebar-item">
+                <div className="make-me-sticky">
+                  <h2>Popular on medium</h2>
+                  {UIAside}
+                </div>
+              </div>
+            </Col>
+          </div>
+        </Row>
+      </Container>
+    </>
+  );
 }
 
 export default Home;
